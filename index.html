@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ MAHIM OFFCIAL — সম্পূর্ণ কমান্ড তালিকা</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #0b0e1a 0%, #141b2b 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            background: rgba(18, 25, 45, 0.65);
+            backdrop-filter: blur(6px);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 2.5rem;
+            box-shadow: 0 25px 50px -8px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-left: 0.75rem;
+            background: #1e293b;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            border: 1px solid #334155;
+        }
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            background: #0f172a;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            border: 1px solid #2d3a52;
+        }
+        .stats i { color: #fbbf24; margin-right: 6px; }
+        .stats .badge {
+            background: #1e293b;
+            padding: 0.1rem 0.7rem;
+            border-radius: 40px;
+            color: #facc15;
+        }
+        .how-to-use {
+            background: #0f172a;
+            border: 1px solid #2d3a52;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem 2rem;
+        }
+        .how-to-use .icon-big {
+            font-size: 2.2rem;
+            color: #fbbf24;
+            margin-right: 0.5rem;
+        }
+        .how-to-use .content {
+            flex: 1;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .how-to-use .content strong { color: #fbbf24; }
+        .how-to-use .content .highlight {
+            background: #1e293b;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #facc15;
+            border: 1px solid #334155;
+        }
+        .how-to-use .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 0.3rem;
+        }
+        .how-to-use .steps .step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .how-to-use .steps .step i { color: #fbbf24; width: 1.2rem; text-align: center; }
+        .how-to-use .note {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px dashed #2d3a52;
+            padding-top: 0.5rem;
+        }
+        .how-to-use .note i { color: #facc15; margin-right: 0.3rem; }
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            align-items: center;
+            background: #0f172a;
+            border-radius: 60px;
+            padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+            border: 1px solid #2d3a52;
+            transition: border 0.2s;
+        }
+        .search-box:focus-within { border-color: #fbbf24; }
+        .search-box i { color: #94a3b8; font-size: 0.9rem; }
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 0.7rem 0.8rem;
+            color: #f1f5f9;
+            width: 100%;
+            outline: none;
+            font-size: 0.95rem;
+        }
+        .search-box input::placeholder { color: #64748b; font-weight: 300; }
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .filter-btn {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 0.45rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .filter-btn i { font-size: 0.75rem; color: #94a3b8; }
+        .filter-btn.active {
+            background: #fbbf24;
+            border-color: #fbbf24;
+            color: #0b0e1a;
+            font-weight: 600;
+        }
+        .filter-btn.active i { color: #0b0e1a; }
+        .filter-btn:hover:not(.active) {
+            background: #2d3a52;
+            border-color: #4b5a77;
+        }
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1rem;
+        }
+        .command-card {
+            background: #0f172a;
+            border-radius: 1.2rem;
+            padding: 1rem 1.2rem 1rem 1.5rem;
+            border-left: 4px solid #fbbf24;
+            box-shadow: 0 6px 12px -6px rgba(0,0,0,0.5);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            border: 1px solid #1e293b;
+        }
+        .command-card:hover {
+            transform: translateY(-3px);
+            border-color: #fbbf24;
+            background: #1a2338;
+            box-shadow: 0 12px 20px -12px rgba(251,191,36,0.15);
+        }
+        .command-card .icon {
+            width: 36px;
+            height: 36px;
+            background: #1e293b;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fbbf24;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .command-card .content { flex: 1; min-width: 0; }
+        .command-card .cmd {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            word-break: break-word;
+        }
+        .command-card .desc {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .command-card .desc .tag {
+            background: #1e293b;
+            padding: 0.05rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #94a3b8;
+            border: 1px solid #2d3a52;
+        }
+        .input-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+        }
+        .input-badge.uid { background: #1e3a5f; border-color: #3b82f6; color: #93c5fd; }
+        .input-badge.teamcode { background: #3b2e1e; border-color: #f59e0b; color: #fcd34d; }
+        .input-badge.none { background: #1e293b; border-color: #475569; color: #94a3b8; }
+        .input-badge i { font-size: 0.6rem; }
+        .command-card .copy-badge {
+            color: #64748b;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            flex-shrink: 0;
+        }
+        .command-card:hover .copy-badge { opacity: 1; }
+        .command-card .copy-badge i { color: #facc15; }
+        .footer-note {
+            margin-top: 2.5rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-note span i { color: #fbbf24; margin-right: 6px; }
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid #fbbf24;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+            font-size: 0.9rem;
+            backdrop-filter: blur(6px);
+            z-index: 999;
+            transition: all 0.2s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .toast-message i { color: #fbbf24; margin-right: 8px; }
+        @media (max-width: 640px) {
+            .container { padding: 1rem; }
+            .header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .stats { font-size: 0.8rem; padding: 0.4rem 1rem; flex-wrap: wrap; }
+            .command-grid { grid-template-columns: 1fr; }
+            .toolbar { flex-direction: column; align-items: stretch; }
+            .filter-group { justify-content: flex-start; }
+            .how-to-use { padding: 1rem; }
+            .how-to-use .steps { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app">
+    <div class="header">
+        <div class="logo">
+            <h1><i class="fas fa-terminal" style="color:#fbbf24; margin-right: 8px;"></i>MAHIM OFFCIAL <span>v2026</span></h1>
+        </div>
+        <div class="stats">
+            <span><i class="fas fa-code"></i> <span id="cmdCount">0</span> টি কমান্ড</span>
+            <span><i class="fas fa-tag"></i> <span class="badge" id="activeFilter">সব</span></span>
+        </div>
+    </div>
+
+    <div class="how-to-use">
+        <div class="icon-big"><i class="fas fa-question-circle"></i></div>
+        <div class="content">
+            <div style="font-weight:600; color:#fbbf24; font-size:1.1rem;">📖 কীভাবে ব্যবহার করবেন</div>
+            <div class="steps">
+                <span class="step"><i class="fas fa-file"></i> এই HTML ফাইলটি ব্রাউজারে খুলুন</span>
+                <span class="step"><i class="fas fa-search"></i> উপরের সার্চ বক্সে কমান্ড বা বিবরণ খুঁজুন</span>
+                <span class="step"><i class="fas fa-filter"></i> ক্যাটাগরি বাটনে ক্লিক করে তালিকা সাজান</span>
+                <span class="step"><i class="fas fa-copy"></i> যেকোনো কার্ডে ক্লিক করলেই কমান্ড কপি হবে</span>
+            </div>
+            <div class="note">
+                <i class="fas fa-info-circle"></i>
+                <strong>শুধু রেফারেন্সের জন্য — কোনো UID/পাসওয়ার্ড/টিম কোড লাগে না।</strong>
+                প্রতিটি কমান্ডের পাশে <span class="highlight">🔑 UID</span>, <span class="highlight">🔗 Team Code</span> বা <span class="highlight">⚡ None</span> ব্যাজ দেখে বুঝুন কী ধরনের ইনপুট দিতে হবে।
+            </div>
+        </div>
+    </div>
+
+    <div class="toolbar">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="🔍 কমান্ড বা বিবরণ লিখুন...">
+        </div>
+        <div class="filter-group" id="filterGroup">
+            <button class="filter-btn active" data-filter="all"><i class="fas fa-th-list"></i> সব</button>
+            <button class="filter-btn" data-filter="info"><i class="fas fa-info-circle"></i> তথ্য</button>
+            <button class="filter-btn" data-filter="friend"><i class="fas fa-user-friends"></i> বন্ধু</button>
+            <button class="filter-btn" data-filter="squad"><i class="fas fa-users"></i> স্কোয়াড</button>
+            <button class="filter-btn" data-filter="emote"><i class="fas fa-laugh"></i> ইমোট</button>
+            <button class="filter-btn" data-filter="evo"><i class="fas fa-fire"></i> ইভো</button>
+            <button class="filter-btn" data-filter="bundle"><i class="fas fa-gift"></i> বান্ডেল</button>
+            <button class="filter-btn" data-filter="fun"><i class="fas fa-smile"></i> মজা</button>
+            <button class="filter-btn" data-filter="ghost"><i class="fas fa-ghost"></i> ঘোস্ট</button>
+            <button class="filter-btn" data-filter="admin"><i class="fas fa-crown"></i> অ্যাডমিন</button>
+        </div>
+    </div>
+
+    <div class="command-grid" id="commandGrid"></div>
+
+    <div class="footer-note">
+        <span><i class="fas fa-mouse-pointer"></i> কমান্ডে ক্লিক করে কপি করুন</span>
+        <span><i class="fas fa-filter"></i> ক্যাটাগরি দিয়ে ফিল্টার করুন</span>
+        <span><i class="fas fa-bolt"></i> MAHIM OFFCIAL · TCP বট</span>
+    </div>
+</div>
+
+<div id="toast" class="toast-message" style="opacity:0; transform: translateX(-50%) translateY(20px);">
+    <i class="fas fa-check-circle"></i> <span id="toastText">কপি করা হয়েছে!</span>
+</div>
+
+<script>
+    // ─── সম্পূর্ণ কমান্ড তালিকা (ইনপুট টাইপ সহ) ───
+    // পরিবর্তন: "! {teamcode}" সরিয়ে ফেলা হয়েছে, শুধু "/join {teamcode}" রাখা হয়েছে।
+    const commands = [
+        // === তথ্য ===
+        { cmd: "/help", desc: "সম্পূর্ণ হেল্প মেনু + প্লেয়ার ইনফো", category: "info", input: "none" },
+        { cmd: "/infox {uid}", desc: "বিস্তারিত প্লেয়ার ইনফো (৩ বক্স, 🥀 ফরম্যাট)", category: "info", input: "uid" },
+        { cmd: "/info {uid}", desc: "প্লেয়ারের নাম, লেভেল, র্যাঙ্ক, ক্ল্যান", category: "info", input: "uid" },
+        { cmd: "/status {uid}", desc: "অনলাইন স্ট্যাটাস চেক (SOLO/INSQUAD/INGAME/OFFLINE)", category: "info", input: "uid" },
+        { cmd: "/duo {uid}", desc: "ডুও পার্টনার তথ্য", category: "info", input: "uid" },
+        { cmd: "/admin", desc: "বটের মালিক ও অ্যাডমিন তথ্য", category: "info", input: "none" },
+        { cmd: "/wallet", desc: "বটের ওয়ালেট (কয়েন, জেমস) দেখান", category: "info", input: "none" },
+        { cmd: ".loginhistory", desc: "বটের লগইন ইতিহাস", category: "info", input: "none" },
+
+        // === বন্ধু ===
+        { cmd: "/addfriend {uid}", desc: "ফ্রেন্ড রিকোয়েস্ট পাঠান", category: "friend", input: "uid" },
+        { cmd: ".addfriend {uid}", desc: "ফ্রেন্ড রিকোয়েস্ট (শুধু মালিক)", category: "friend", input: "uid" },
+        { cmd: ".removefriend {uid}", desc: "ফ্রেন্ড রিমুভ (শুধু মালিক)", category: "friend", input: "uid" },
+        { cmd: "/friends", desc: "সব বন্ধুর তালিকা (স্টপ করতে /stop)", category: "friend", input: "none" },
+        { cmd: "/friend {uid} [count]", desc: "টোকেন দিয়ে ফ্রেন্ড রিকোয়েস্ট", category: "friend", input: "uid" },
+        { cmd: "/likes {uid}", desc: "টার্গেটকে ১০০ লাইক পাঠান", category: "friend", input: "uid" },
+        { cmd: "/like {uid}", desc: "লাইক পাঠান", category: "friend", input: "uid" },
+
+        // === স্কোয়াড (শুধু /join আছে, ! সরানো হয়েছে) ===
+        { cmd: "/join {teamcode}", desc: "কোড দিয়ে স্কোয়াড জয়েন", category: "squad", input: "teamcode" },
+        { cmd: "/lw {teamcode}", desc: "অটো-স্টার্ট (জয়েন → ম্যাচ → ওয়েট → রিপিট)", category: "squad", input: "teamcode" },
+        { cmd: "/stop_auto", desc: "অটো-স্টার্ট বন্ধ করুন", category: "squad", input: "none" },
+        { cmd: "/lagx {teamcode}", desc: "দ্রুত জয়েন/লিভ ল্যাগ অ্যাটাক", category: "squad", input: "teamcode" },
+        { cmd: "/stop lag", desc: "ল্যাগ অ্যাটাক বন্ধ", category: "squad", input: "none" },
+        { cmd: "/lagc {teamcode}", desc: "আলট্রা-ফাস্ট জয়েন/লিভ (২ মিনিট অটো-স্টপ)", category: "squad", input: "teamcode" },
+        { cmd: "/stop_lagc", desc: "ল্যাজি সি বন্ধ", category: "squad", input: "none" },
+        { cmd: "/xjoin {roomid} {pass}", desc: "কাস্টম রুমে জয়েন", category: "squad", input: "uid" },
+        { cmd: "/joinroom {roomid} {pass}", desc: "কাস্টম রুমে জয়েন", category: "squad", input: "uid" },
+        { cmd: "/createroom {name} {pass} [players]", desc: "কাস্টম রুম তৈরি", category: "squad", input: "none" },
+        { cmd: "/room {uid}", desc: "প্লেয়ারের রুম আইডি বের করুন", category: "squad", input: "uid" },
+        { cmd: "/spamroom {roomid} {uid} {msg}", desc: "রুমে স্প্যাম পাঠান", category: "squad", input: "uid" },
+        { cmd: "/sr {roomid} {uid} {msg}", desc: "/spamroom-এর শর্টকাট", category: "squad", input: "uid" },
+        { cmd: "/exit", desc: "বর্তমান স্কোয়াড ছাড়ুন", category: "squad", input: "none" },
+        { cmd: ".exit", desc: "স্কোয়াড ছাড়ুন", category: "squad", input: "none" },
+        { cmd: ".leader [uid]", desc: "স্কোয়াড লিডারশিপ ট্রান্সফার", category: "squad", input: "uid" },
+        { cmd: ".ready", desc: "বটকে রেডি করুন", category: "squad", input: "none" },
+        { cmd: ".unready", desc: "বটকে আনরেডি করুন", category: "squad", input: "none" },
+        { cmd: ".req", desc: "ওয়ার্ল্ড রিকোয়েস্ট প্যাকেট পাঠান", category: "squad", input: "none" },
+        { cmd: ".private", desc: "প্রাইভেট প্যাকেট পাঠান", category: "squad", input: "none" },
+        { cmd: ".lx", desc: "বার্স্ট রেডি/আনরেডি স্প্যাম", category: "squad", input: "none" },
+        { cmd: ".st", desc: "আলট্রা-ফাস্ট স্টার্ট স্প্যাম (২০ সেকেন্ড)", category: "squad", input: "none" },
+        { cmd: "/ss", desc: "ম্যাচ স্টার্ট করুন", category: "squad", input: "none" },
+        { cmd: "/start1", desc: "ম্যাচ স্টার্ট স্প্যাম (১৭ সেকেন্ড)", category: "squad", input: "none" },
+        { cmd: "/stop1", desc: "ম্যাচ স্প্যাম বন্ধ", category: "squad", input: "none" },
+
+        // === ইমোট ===
+        { cmd: "/e [uid] {emote}", desc: "ইমোট পাঠান (নাম বা নম্বর)", category: "emote", input: "uid" },
+        { cmd: "/em {teamcode} {uid} {emote}", desc: "স্কোয়াড জয়েন → ইমোট → লিভ", category: "emote", input: "teamcode" },
+        { cmd: "/fast {uid1..uid4} {emoteid}", desc: "ফাস্ট ইমোট স্প্যাম (২৫ বার)", category: "emote", input: "uid" },
+        { cmd: "/p {uid} {emoteid} {times}", desc: "কাস্টম ইমোট স্প্যাম", category: "emote", input: "uid" },
+        { cmd: "/copy", desc: "ইমোট হাইজ্যাক চালু (অন্যদের কপি)", category: "emote", input: "none" },
+        { cmd: "/copy_off", desc: "ইমোট হাইজ্যাক বন্ধ", category: "emote", input: "none" },
+        { cmd: "/mimic_on", desc: "মিমিক মোড চালু", category: "emote", input: "none" },
+        { cmd: "/mimic_off", desc: "মিমিক মোড বন্ধ", category: "emote", input: "none" },
+        { cmd: "/block_emote {uid}", desc: "নির্দিষ্ট ইউজারের ইমোট ব্লক", category: "emote", input: "uid" },
+        { cmd: "/unblock_emote", desc: "ইমোট ব্লক সরান", category: "emote", input: "none" },
+        { cmd: "/arr {uid}", desc: "এন্ট্রি অ্যানিমেশন পাঠান", category: "emote", input: "uid" },
+        { cmd: "/freeze {uid}", desc: "আইস ইমোট দিয়ে ফ্রিজ করুন", category: "emote", input: "uid" },
+        { cmd: "/stop_freeze", desc: "ফ্রিজ কমান্ড বন্ধ", category: "emote", input: "none" },
+        { cmd: "/title", desc: "নিজেকে টাইটেল পাঠান", category: "emote", input: "none" },
+        { cmd: "/sticker", desc: "র্যান্ডম স্টিকার পাঠান", category: "emote", input: "none" },
+        { cmd: "/{number}", desc: "নম্বর দিয়ে ইমোট (যেমন /1)", category: "emote", input: "none" },
+        { cmd: "/{number}*{count}", desc: "একাধিকবার ইমোট পাঠান", category: "emote", input: "none" },
+        { cmd: ".equip_emote", desc: "HI ইমোট ইকুইপ (শুধু মালিক)", category: "emote", input: "none" },
+        { cmd: ".dnd", desc: "ডু নট ডিস্টার্ব চালু", category: "emote", input: "none" },
+        { cmd: ".dnd_off", desc: "ডু নট ডিস্টার্ব বন্ধ", category: "emote", input: "none" },
+        { cmd: ".S1", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S2", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S3", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S4", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S5", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S6", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S7", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".S8", desc: "বিশেষ ব্যাজ/ইনভাইট প্যাকেট", category: "emote", input: "uid" },
+        { cmd: ".T1", desc: "টাইটেল প্যাকেট পাঠান", category: "emote", input: "none" },
+
+        // === ইভো ===
+        { cmd: "/max_all", desc: "সব ইভো ইমোট সাইকেল শুরু (অবিরত)", category: "evo", input: "none" },
+        { cmd: "/max_stop", desc: "ইভো সাইকেল বন্ধ", category: "evo", input: "none" },
+        { cmd: "/random", desc: "ইভো সাইকেল শুরু (/max_all-এর মতো)", category: "evo", input: "none" },
+        { cmd: "/evo {uid1..uid4} {1-21}", desc: "নির্দিষ্ট ইভো ইমোট পাঠান", category: "evo", input: "uid" },
+        { cmd: "/evo_fast {uid1..uid4} {1-21}", desc: "ফাস্ট ইভো স্প্যাম (২৫ বার)", category: "evo", input: "uid" },
+        { cmd: "/evo_c {uid1..uid4} {1-21} {times}", desc: "কাস্টম ইভো স্প্যাম", category: "evo", input: "uid" },
+        { cmd: "/stop evo_fast", desc: "ফাস্ট ইভো স্প্যাম বন্ধ", category: "evo", input: "none" },
+        { cmd: "/stop evo_c", desc: "কাস্টম ইভো স্প্যাম বন্ধ", category: "evo", input: "none" },
+
+        // === বান্ডেল ===
+        { cmd: "/b {name}", desc: "বান্ডেল পাঠান", category: "bundle", input: "none" },
+        { cmd: "/bundle {name}", desc: "বান্ডেল পাঠান", category: "bundle", input: "none" },
+        { cmd: "/animation {name}", desc: "অ্যানিমেশন প্যাকেট পাঠান", category: "bundle", input: "none" },
+        { cmd: "/look {name/number}", desc: "অ্যানিমেশন + বান্ডেল কম্বো (ডিলে সহ)", category: "bundle", input: "none" },
+        { cmd: "/bundle_power {name}", desc: "অ্যানিমেশন + বান্ডেল (৩ সেকেন্ড ডিলে)", category: "bundle", input: "none" },
+        { cmd: "/magic {teamcode}", desc: "অটো বান্ডেল স্প্যাম লুপ", category: "bundle", input: "teamcode" },
+        { cmd: "/offmagic", desc: "ম্যাজিক লুপ বন্ধ", category: "bundle", input: "none" },
+
+        // === মজা ===
+        { cmd: "/gop {name}", desc: "গালি + ইমোট পাঠান", category: "fun", input: "none" },
+        { cmd: "/gali {name}", desc: "ডাবল ইমোট সহ গালি", category: "fun", input: "none" },
+        { cmd: "/love {name}", desc: "ভালোবাসার মেসেজ + ইমোট", category: "fun", input: "none" },
+        { cmd: "/love2 {name}", desc: "ভালোবাসার মেসেজ (১৫ সেকেন্ড)", category: "fun", input: "none" },
+        { cmd: "/mg {msg} [repeats]", desc: "ওয়েভ প্যাটার্নে মেসেজ", category: "fun", input: "none" },
+        { cmd: "/massage {msg} {times}", desc: "স্কোয়াড চ্যাটে মেসেজ স্প্যাম", category: "fun", input: "none" },
+        { cmd: "/stop msg", desc: "মেসেজ স্প্যাম বন্ধ", category: "fun", input: "none" },
+        { cmd: "/praisa {name}", desc: "১৭টি পজিটিভ মেসেজ + ইমোট", category: "fun", input: "none" },
+        { cmd: "/coin", desc: "কয়েন টস", category: "fun", input: "none" },
+        { cmd: "/dice", desc: "ডাইস রোল", category: "fun", input: "none" },
+        { cmd: "/luck", desc: "র্যান্ডম লাক মেসেজ", category: "fun", input: "none" },
+        { cmd: "/dhadha", desc: "বাংলা ধাঁধা", category: "fun", input: "none" },
+        { cmd: "/gender {name}", desc: "র্যান্ডম জেন্ডার রেসপন্স", category: "fun", input: "none" },
+        { cmd: ".R", desc: "বট রিস্টার্ট (শুধু মালিক)", category: "fun", input: "none" },
+        { cmd: "*", desc: "বট রিস্টার্ট (শুধু মালিক)", category: "fun", input: "none" },
+        { cmd: "/noob", desc: "নিজেকে সব নুব টাইটেল পাঠান", category: "fun", input: "none" },
+        { cmd: "/alltitles [uid]", desc: "সব টাইটেল একের পর এক পাঠান", category: "fun", input: "uid" },
+        { cmd: "/s_m {uid} {msg}", desc: "নির্দিষ্ট ইউজারকে প্রাইভেট মেসেজ", category: "fun", input: "uid" },
+        { cmd: "/autorep {msg}", desc: "ফরম্যাটেড মেসেজ স্কোয়াডে পাঠান (প্রাইভেট চ্যাট থেকে)", category: "fun", input: "none" },
+
+        // === ঘোস্ট ===
+        { cmd: "/ghost on/off", desc: "ঘোস্ট মোড চালু/বন্ধ", category: "ghost", input: "none" },
+        { cmd: "/ghost {teamcode} {name}", desc: "ঘোস্ট জয়েন স্কোয়াড", category: "ghost", input: "teamcode" },
+        { cmd: "/_man", desc: "ম্যানুয়াল রিজাক প্যাকেট", category: "ghost", input: "none" },
+        { cmd: "/_inv {teamcode}", desc: "ঘোস্ট ইনভাইট", category: "ghost", input: "teamcode" },
+        { cmd: "/xggst {teamcode}", desc: "ঘোস্ট জয়েন", category: "ghost", input: "teamcode" },
+        { cmd: "/quick {teamcode} {emote} [uid]", desc: "দ্রুত ইমোট অ্যাটাক (জয়েন→ইমোট→লিভ)", category: "ghost", input: "teamcode" },
+        { cmd: "._man", desc: "ঘোস্ট ম্যান কমান্ড", category: "ghost", input: "none" },
+
+        // === অ্যাডমিন ===
+        { cmd: ".createclan", desc: "গিল্ড তৈরি (ইন্টারঅ্যাকটিভ)", category: "admin", input: "none" },
+        { cmd: ".joinclan {clan_id}", desc: "ক্ল্যানে জয়েন (শুধু মালিক)", category: "admin", input: "uid" },
+        { cmd: ".leaveclan", desc: "ক্ল্যান ছাড়ুন (শুধু মালিক)", category: "admin", input: "none" },
+        { cmd: ".exitclan", desc: "ক্ল্যান ছাড়ুন (শুধু মালিক)", category: "admin", input: "none" },
+        { cmd: "/wladd {uid}", desc: "হোয়াইটলিস্টে যোগ করুন", category: "admin", input: "uid" },
+        { cmd: "/wlremove {uid}", desc: "হোয়াইটলিস্ট থেকে সরান", category: "admin", input: "uid" },
+        { cmd: "/wllist", desc: "হোয়াইটলিস্ট দেখান", category: "admin", input: "none" },
+        { cmd: "/wlenable", desc: "শুধু হোয়াইটলিস্ট মোড চালু", category: "admin", input: "none" },
+        { cmd: "/wldisable", desc: "শুধু হোয়াইটলিস্ট মোড বন্ধ", category: "admin", input: "none" },
+        { cmd: "/kick {uid}", desc: "প্লেয়ার কিক (বটকে লিডার হতে হবে)", category: "admin", input: "uid" },
+        { cmd: "/tester {uid}", desc: "কিক প্যাকেট টেস্ট", category: "admin", input: "uid" },
+        { cmd: "/switch5", desc: "স্কোয়াড সাইজ ৫ করুন", category: "admin", input: "none" },
+        { cmd: "/bio {text}", desc: "বটের প্রোফাইল বায়ো পরিবর্তন", category: "admin", input: "none" },
+        { cmd: "/guest {count}", desc: "গেস্ট অ্যাকাউন্ট জেনারেট", category: "admin", input: "none" },
+        { cmd: "/viewguests", desc: "সেভ করা গেস্ট অ্যাকাউন্ট দেখান", category: "admin", input: "none" },
+        { cmd: "/bundle_power {name}", desc: "বান্ডেল পাওয়ার অ্যানিমেশন", category: "admin", input: "none" },
+
+        // === ওয়ার্ল্ড / অন্যান্য ===
+        { cmd: "/world {owner} {code}", desc: "ওয়ার্ল্ড জয়েন প্যাকেট", category: "squad", input: "uid" },
+        { cmd: "/world_fast", desc: "ওয়ার্ল্ড ফাস্ট প্যাকেট", category: "squad", input: "none" },
+        { cmd: "/worlds", desc: "দুটো ওয়ার্ল্ড প্যাকেট একসাথে", category: "squad", input: "none" },
+        { cmd: "/private", desc: "টিম প্রাইভেট প্যাকেট", category: "squad", input: "none" },
+        { cmd: "/spm_inv {uid}", desc: "কসমেটিকস সহ ইনভাইট স্প্যাম", category: "squad", input: "uid" },
+        { cmd: "/stop spm_inv", desc: "ইনভাইট স্প্যাম বন্ধ", category: "squad", input: "none" },
+        { cmd: "/Pglag {uid}", desc: "আলট্রা-ফাস্ট স্কোয়াড সাইজ সুইচিং (৬৫ সেকেন্ড)", category: "squad", input: "uid" },
+        { cmd: "/stop chatspam", desc: "চ্যাটস্প্যাম বন্ধ", category: "squad", input: "none" },
+        { cmd: "/reject {uid}", desc: "রিজেক্ট স্প্যাম অ্যাটাক", category: "squad", input: "uid" },
+        { cmd: "/reject_stop", desc: "রিজেক্ট স্প্যাম বন্ধ", category: "squad", input: "none" },
+        { cmd: "/craftland {uid}", desc: "ক্রাফটল্যান্ড রুম তৈরি ও ইনভাইট", category: "squad", input: "uid" },
+        { cmd: ".openroom", desc: "রুম খুলুন ও নিজেকে ইনভাইট করুন", category: "squad", input: "none" },
+        { cmd: ".oproom {uid}", desc: "রুম খুলুন ও টার্গেটকে ইনভাইট করুন", category: "squad", input: "uid" },
+        { cmd: ".sroom {uid} [duration]", desc: "রুম খুলুন + ইনভাইট স্প্যাম", category: "squad", input: "uid" },
+        { cmd: ".spmroom {uid} [duration]", desc: ".sroom-এর মতো", category: "squad", input: "uid" },
+        { cmd: "/join_req {uid}", desc: "প্লেয়ারকে জয়েন রিকোয়েস্ট পাঠান", category: "squad", input: "uid" },
+        { cmd: "/train", desc: "ট্রেনিং মোড শুরু", category: "squad", input: "none" },
+        { cmd: "/train custom", desc: "কাস্টম ট্রেনিং মোড", category: "squad", input: "none" },
+        { cmd: "/tagx", desc: "হাইজ্যাক + কিপ-অ্যালাইভ স্প্যাম", category: "emote", input: "none" },
+        { cmd: ".hud", desc: "HUD শেয়ার প্যাকেট পাঠান", category: "squad", input: "none" },
+        { cmd: "-AI", desc: "AI অটো-রিপ্লাই বন্ধ", category: "info", input: "none" },
+        { cmd: "+AI", desc: "AI অটো-রিপ্লাই চালু", category: "info", input: "none" },
+    ];
+
+    // ─── রেন্ডার ───
+    const grid = document.getElementById('commandGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cmdCountSpan = document.getElementById('cmdCount');
+    const activeFilterSpan = document.getElementById('activeFilter');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function getIconForCategory(cat) {
+        const map = {
+            info: 'fa-info-circle',
+            friend: 'fa-user-friends',
+            squad: 'fa-users',
+            emote: 'fa-laugh',
+            evo: 'fa-fire',
+            bundle: 'fa-gift',
+            fun: 'fa-smile',
+            ghost: 'fa-ghost',
+            admin: 'fa-crown'
+        };
+        return map[cat] || 'fa-terminal';
+    }
+
+    function getInputBadge(inputType) {
+        if (inputType === 'uid') {
+            return '<span class="input-badge uid"><i class="fas fa-key"></i> UID</span>';
+        } else if (inputType === 'teamcode') {
+            return '<span class="input-badge teamcode"><i class="fas fa-link"></i> Team Code</span>';
+        } else {
+            return '<span class="input-badge none"><i class="fas fa-ban"></i> None</span>';
+        }
+    }
+
+    function render() {
+        const filtered = commands.filter(cmd => {
+            const matchFilter = currentFilter === 'all' || cmd.category === currentFilter;
+            const search = currentSearch.toLowerCase();
+            const matchSearch = cmd.cmd.toLowerCase().includes(search) || cmd.desc.toLowerCase().includes(search);
+            return matchFilter && matchSearch;
+        });
+
+        cmdCountSpan.textContent = filtered.length;
+        const filterName = {
+            all: 'সব',
+            info: 'তথ্য',
+            friend: 'বন্ধু',
+            squad: 'স্কোয়াড',
+            emote: 'ইমোট',
+            evo: 'ইভো',
+            bundle: 'বান্ডেল',
+            fun: 'মজা',
+            ghost: 'ঘোস্ট',
+            admin: 'অ্যাডমিন'
+        };
+        activeFilterSpan.textContent = filterName[currentFilter] || currentFilter;
+
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#64748b; padding:3rem 0;"><i class="fas fa-search" style="font-size:2rem; display:block; margin-bottom:1rem;"></i> কোনো কমান্ড পাওয়া যায়নি</div>`;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(cmd => {
+            const icon = getIconForCategory(cmd.category);
+            const inputBadge = getInputBadge(cmd.input);
+            const copyText = cmd.cmd;
+            return `
+                <div class="command-card" data-cmd="${copyText}" data-category="${cmd.category}">
+                    <div class="icon"><i class="fas ${icon}"></i></div>
+                    <div class="content">
+                        <div class="cmd">${cmd.cmd}</div>
+                        <div class="desc">
+                            <span>${cmd.desc}</span>
+                            <span class="tag">${cmd.category}</span>
+                            ${inputBadge}
+                        </div>
+                    </div>
+                    <div class="copy-badge"><i class="fas fa-copy"></i></div>
+                </div>
+            `;
+        }).join('');
+
+        document.querySelectorAll('.command-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const cmdText = this.dataset.cmd;
+                navigator.clipboard.writeText(cmdText).then(() => {
+                    showToast(`✅ কপি করা হয়েছে: ${cmdText}`);
+                }).catch(() => {
+                    const ta = document.createElement('textarea');
+                    ta.value = cmdText;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    ta.remove();
+                    showToast(`📋 কপি: ${cmdText}`);
+                });
+            });
+        });
+    }
+
+    let toastTimeout;
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        const text = document.getElementById('toastText');
+        text.textContent = msg;
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(20px)';
+        }, 1800);
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+            render();
+        });
+    });
+
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value;
+        render();
+    });
+
+    render();
+</script>
+</body>
+</html>
